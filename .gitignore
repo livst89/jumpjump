@@ -215,6 +215,10 @@ pip-log.txt
 .mr.developer.cfg
 
 
+#################
+## Unity 3D
+#################
+
 .DS_Store
 Library
 Temp
