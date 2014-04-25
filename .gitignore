@@ -213,3 +213,18 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+
+#################
+## Unity 3D
+#################
+
+.DS_Store
+Library
+Temp
+*.csproj
+*.pidb
+*.unityproj
+*.sln
+*.userprefs
+
