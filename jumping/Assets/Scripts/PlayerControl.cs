@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Control : MonoBehaviour
+public class PlayerControl : MonoBehaviour
 {
 		public int jump = 4;
 		public Transform speed;
@@ -14,7 +14,7 @@ public class Control : MonoBehaviour
 		}
 	
 		// Update is called once per frame
-		void Update ()
+		void FixedUpdate ()
 		{
 
 				//		transform.position += new Vector2(0, 0.5f);

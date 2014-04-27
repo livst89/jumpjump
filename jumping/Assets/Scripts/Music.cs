@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class music : MonoBehaviour {
+public class Music : MonoBehaviour {
 
 	 public AudioSource Jump1;
 	 public AudioSource Platform;
