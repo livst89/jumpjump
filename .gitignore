@@ -218,8 +218,8 @@ pip-log.txt
 # =============== #
 # Unity generated #
 # =============== #
-Temp/
-Library/
+jumping/Temp/
+jumping/Library/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
