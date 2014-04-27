@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Platform : MonoBehaviour {
+public class Platforms : MonoBehaviour {
 	
 	public int jumpSpeed = 7;
 
