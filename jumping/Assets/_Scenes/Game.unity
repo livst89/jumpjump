@@ -122,7 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 0}
-  jumpSpeed: 7
+  jumpForce: 1000
+  Jump1: {fileID: 8300000, guid: 19652c4af8279c94fb9c249def542599, type: 3}
 --- !u!61 &69239244
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -211,91 +212,32 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!1 &595469193
+--- !u!1 &134340138
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 595469194}
-  - 82: {fileID: 595469195}
+  - 4: {fileID: 134340139}
   m_Layer: 0
-  m_Name: Jump1
+  m_Name: GroundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &595469194
+--- !u!4 &134340139
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 595469193}
+  m_GameObject: {fileID: 134340138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.32995605, y: .396569729, z: 0}
+  m_LocalPosition: {x: 0, y: -1.61586189, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1206560844}
---- !u!82 &595469195
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 595469193}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 19652c4af8279c94fb9c249def542599, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
+  m_Father: {fileID: 2044158679}
 --- !u!1 &1195975630
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +276,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1206560844}
   m_Layer: 0
-  m_Name: muuusic
+  m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -351,7 +293,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1874874765}
-  - {fileID: 595469194}
   m_Father: {fileID: 1195975631}
 --- !u!1001 &1619032743
 Prefab:
@@ -441,7 +382,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 0}
-  jumpSpeed: 7
+  jumpForce: 1000
+  Jump1: {fileID: 8300000, guid: 19652c4af8279c94fb9c249def542599, type: 3}
 --- !u!61 &1669174195
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -485,7 +427,7 @@ Transform:
   m_PrefabInternal: {fileID: 1720448742}
   m_GameObject: {fileID: 1669174192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1965971, y: 3.10788727, z: 0}
+  m_LocalPosition: {x: -2.1965971, y: 2.30097389, z: 0}
   m_LocalScale: {x: .5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -502,7 +444,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 199e6b569b2e7e44b89b29190c904c43, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.10788727
+      value: 2.30097389
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 199e6b569b2e7e44b89b29190c904c43, type: 2}
       propertyPath: m_LocalPosition.z
@@ -539,9 +481,9 @@ GameObject:
   - 4: {fileID: 1790017242}
   - 212: {fileID: 1790017241}
   - 61: {fileID: 1790017243}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -577,7 +519,7 @@ Transform:
   m_GameObject: {fileID: 1790017240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -6, z: 0}
-  m_LocalScale: {x: 1.1573801, y: 2.61812878, z: .174541906}
+  m_LocalScale: {x: 1.38885605, y: 2.61812878, z: .174541906}
   m_Children: []
   m_Father: {fileID: 1195975631}
 --- !u!61 &1790017243
@@ -615,7 +557,7 @@ AudioSource:
   m_GameObject: {fileID: 1874874763}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: e2fd86070f7c6824d8cd9c48dc80dbc4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5090866b143096f47abc927b4652b1a8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1.97000003
@@ -740,7 +682,7 @@ GameObject:
   - 50: {fileID: 2044158680}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -775,9 +717,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2044158677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.509674072, z: 0}
+  m_LocalPosition: {x: 0, y: -.00122499466, z: 0}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children:
+  - {fileID: 134340139}
   - {fileID: 2088266089}
   m_Father: {fileID: 0}
 --- !u!50 &2044158680
@@ -788,7 +731,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 2044158677}
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_FixedAngle: 1
   m_IsKinematic: 0
@@ -806,10 +749,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7e6e488a50dd6c43a7430977ba7401c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: 4
-  speed: {fileID: 0}
-  Jump1: {fileID: 595469195}
-  jumpSpeed: 7
+  maxSpeed: 10
+  jumpForce: 700
+  groundCheck: {fileID: 134340139}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 1024
+  Jump1: {fileID: 8300000, guid: 19652c4af8279c94fb9c249def542599, type: 3}
 --- !u!61 &2044158682
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -819,7 +765,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 2.98000002, y: 4.48000002}
+  m_Size: {x: 2, y: 2.70000005}
   m_Center: {x: 0, y: 0}
 --- !u!1 &2088266084
 GameObject:

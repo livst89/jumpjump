@@ -3,38 +3,58 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour
 {
-		public int jump = 4;
-		public Transform speed;
 
-	public AudioSource Jump1;
-	public int jumpSpeed;
+	public float maxSpeed = 10.0f;
+	public float jumpForce;				// Set to 700.0f in the Player inspector
+	private bool grounded = false;			// Whether or not the player is grounded.
+	public Transform groundCheck;			// A position marking where to check if the player is grounded.
+	float groundRadius = 0.2f;
+	public LayerMask whatIsGround;
 
-	void Start (){
+	float minValX = -6.5f;
+	float maxValX = 6.5f;
+
+	public AudioClip Jump1;
 	
-		Jump1 = (AudioSource)gameObject.AddComponent("AudioSource");
-		AudioClip myJump1;	
-		myJump1 = (AudioClip)Resources.Load ("Sounds/Jump1");
-		Jump1.clip = myJump1;
-		
-	}
 
-		void FixedUpdate ()
-		{
+	void FixedUpdate (){
 
-				if (Input.GetKey (KeyCode.D)) {
-						transform.Translate (Vector2.right * 4f * Time.deltaTime);
-						transform.eulerAngles = new Vector2 (0, 0);
+		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
+		//grounded = Physics2D.Linecast(transform.position,groundCheck.position,  1 << LayerMask.NameToLayer("Ground"));
+
+		Debug.Log (grounded);
 
 
-	
-				}
-				if (Input.GetKey (KeyCode.A)) {
-						transform.Translate (-Vector2.right * 4f * Time.deltaTime);
-				}	
-				if (Input.GetKey (KeyCode.W)) {
-						transform.Translate (Vector2.up * 8f * Time.deltaTime);
-			Jump1.Play ();
-				}
+		float move = Input.GetAxis ("Horizontal");
+
+		rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y);
+		if (rigidbody2D.transform.position.x < minValX)
+			rigidbody2D.transform.position = new Vector3 (minValX, transform.position.y, transform.position.z);
+		if (rigidbody2D.transform.position.x > maxValX)
+			rigidbody2D.transform.position = new Vector3 (maxValX, transform.position.y, transform.position.z);
 	
 	}
+
+	void Update(){
+		if(grounded && Input.GetKeyDown(KeyCode.Space)){
+			Debug.Log ("Jump!");
+			AudioSource.PlayClipAtPoint(Jump1, transform.position);
+			grounded = false;
+			rigidbody2D.AddForce(new Vector2(0.0f,jumpForce));
+		}
+	}
+
+	/*
+	void OnCollisionEnter2D (Collision2D other){
+		if(other.gameObject.name == "Ground"){
+			grounded = true;
+		}
+	}
+
+	void OnCollisionExit2D (Collision2D other){
+		if(other.gameObject.name == "Ground"){
+			grounded = false;
+		}
+	}
+	*/
 }
