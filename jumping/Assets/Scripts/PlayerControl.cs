@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour
 {
+	private GameController gameController; // Object for referring to the GameController script
 
 	public float maxSpeed = 10.0f;
 	public float jumpForce;				// Set to 700.0f in the Player inspector
@@ -15,15 +16,23 @@ public class PlayerControl : MonoBehaviour
 	float maxValX = 6.5f;
 
 	public AudioClip Jump1;
-	
+
+	void Start () {
+		// Check to ensure that a GameController object is in the scene
+		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
+		if (gameControllerObject != null)
+		{
+			gameController = gameControllerObject.GetComponent <GameController>();
+		}
+		if (gameController == null)
+		{
+			Debug.Log ("Cannot find 'GameController' script");
+		}
+	}
 
 	void FixedUpdate (){
 
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
-		//grounded = Physics2D.Linecast(transform.position,groundCheck.position,  1 << LayerMask.NameToLayer("Ground"));
-
-		Debug.Log (grounded);
-
 
 		float move = Input.GetAxis ("Horizontal");
 
