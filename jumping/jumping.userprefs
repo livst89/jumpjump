@@ -1,10 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\Desktop\score.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerControl.cs">
     <Files>
-      <File FileName="..\..\..\jumping\Assets\Script\Control.cs" Line="71" Column="91" />
-      <File FileName="..\..\..\..\Desktop\score.cs" Line="12" Column="3" />
-      <File FileName="..\..\..\jumping\Assets\Script\Platform.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/PlayerControl.cs" Line="19" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

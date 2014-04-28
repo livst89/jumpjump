@@ -5,12 +5,11 @@ public class PlayerControl : MonoBehaviour
 {
 		public int jump = 4;
 		public Transform speed;
-	  public int score = 0; // SCOOOOOOOOOOOOORREEEE
 
 	public AudioSource Jump1;
 	public int jumpSpeed;
 
-	void start (){
+	void Start (){
 	
 		Jump1 = (AudioSource)gameObject.AddComponent("AudioSource");
 		AudioClip myJump1;	
@@ -37,9 +36,5 @@ public class PlayerControl : MonoBehaviour
 			Jump1.Play ();
 				}
 	
-	}
-	void OnGUI() {
-		GUI.Label(new Rect (20, 20, 100, 40), "Score: " + score + ""); // this is the giu text. 
-		
 	}
 }

@@ -50,7 +50,6 @@
      <Compile Include="Assets\Scripts\Music.cs" />
      <Compile Include="Assets\Scripts\Platforms.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
-     <Compile Include="Assets\Scripts\Score.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
