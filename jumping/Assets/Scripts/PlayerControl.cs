@@ -43,18 +43,4 @@ public class PlayerControl : MonoBehaviour
 			rigidbody2D.AddForce(new Vector2(0.0f,jumpForce));
 		}
 	}
-
-	/*
-	void OnCollisionEnter2D (Collision2D other){
-		if(other.gameObject.name == "Ground"){
-			grounded = true;
-		}
-	}
-
-	void OnCollisionExit2D (Collision2D other){
-		if(other.gameObject.name == "Ground"){
-			grounded = false;
-		}
-	}
-	*/
 }
