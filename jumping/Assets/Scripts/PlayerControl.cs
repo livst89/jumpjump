@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerControl : MonoBehaviour
 {
 	private GameController gameController; // Object for referring to the GameController script
+	private ScoreKeeper scoreKeeper; // Object for referring to the GameController script
 
 	public float maxSpeed = 10.0f;
 	public float jumpForce;				// Set to 700.0f in the Player inspector
@@ -28,6 +29,17 @@ public class PlayerControl : MonoBehaviour
 		{
 			Debug.Log ("Cannot find 'GameController' script");
 		}
+
+		// Check to ensure that a ScoreKeeper object is in the scene
+		GameObject scoreKeeperObject = GameObject.FindWithTag ("ScoreKeeper");
+		if (scoreKeeperObject != null)
+		{
+			scoreKeeper = scoreKeeperObject.GetComponent <ScoreKeeper>();
+		}
+		if (scoreKeeper == null)
+		{
+			Debug.Log ("Cannot find 'Score' script");
+		}
 	}
 
 	void FixedUpdate (){
@@ -50,6 +62,10 @@ public class PlayerControl : MonoBehaviour
 			AudioSource.PlayClipAtPoint(Jump1, transform.position);
 			grounded = false;
 			rigidbody2D.AddForce(new Vector2(0.0f,jumpForce));
+		}
+		int score = scoreKeeper.GetScore();
+		if(grounded && score > 0){
+			gameController.GameOver ();
 		}
 	}
 }

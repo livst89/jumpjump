@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
 
-	public int score = 0; // SCOOOOOOOOOOOOORREEEE
+	public ScoreKeeper scoreKeeper;		// ScoreKeeper game object
 
 	public GameObject PlatPre;
 	public Vector2 spawnValues;
@@ -14,15 +14,36 @@ public class GameController : MonoBehaviour {
 	public GameObject pickupsContainer; // PickUps empty game object container
 	public int maxPlats;				// Max amount of coins allowed in the scene
 
+	//private bool gameOver;
+
 	public float spawnWait;
 
 	// Use this for initialization
 	void Start () {
+		// Check to ensure that a ScoreKeeper object is in the scene
+		GameObject scoreKeeperObject = GameObject.FindWithTag ("ScoreKeeper");
+		if (scoreKeeperObject != null)
+		{
+			scoreKeeper = scoreKeeperObject.GetComponent <ScoreKeeper>();
+		}
+		if (scoreKeeper == null)
+		{
+			Debug.Log ("Cannot find 'Score' script");
+		}
+
+		scoreKeeper.resetScore();
+		scoreKeeper.UpdateScore ();
+		//gameOver = false;
 		pickUps.AddRange(GameObject.FindGameObjectsWithTag("Platform")); // Check for Coin prefabs in the scene and add them to the pickUps List if there are any
 		if (pickUps.Count == 0) // If no Coin prefabs have been added to the list, aka it's empty
 			Debug.Log("No game objects are currently tagged with Coin"); // This will always be printed if there are no coins instantiated before the game starts
 		StartCoroutine (SpawnWaves ());
 	}
+
+/*	void Awake() {
+		DontDestroyOnLoad(scoreText);
+		Debug.Log("Don't destroy score");
+	}*/
 
 	IEnumerator SpawnWaves() {
 		while (true) {
@@ -60,12 +81,8 @@ public class GameController : MonoBehaviour {
 		return !plat.activeInHierarchy;
 	}
 
-	public void AddPoint () {
-		score += 10;
-	}
-
-	void OnGUI() {
-		GUI.Label(new Rect (20, 20, 100, 40), "Score: " + score + ""); // this is the giu text. 
-		
+	public void GameOver()
+	{
+		Application.LoadLevel ("GameOver");
 	}
 }
