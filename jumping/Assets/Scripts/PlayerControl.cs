@@ -13,8 +13,8 @@ public class PlayerControl : MonoBehaviour
 	float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
 
-	float minValX = -6.5f;
-	float maxValX = 6.5f;
+	float minValX = -6.5f;				// Sets the boundaries 
+	float maxValX = 6.5f;				// Sets the boundaries SO THE LAYER CAN'T FALL OFF THE SCREEN. 
 
 	public AudioClip Jump1;
 
