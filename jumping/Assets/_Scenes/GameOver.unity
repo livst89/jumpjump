@@ -104,9 +104,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: f85c0f062f8fb6a409a686fecf6316e8, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 0
+  m_FontSize: 14
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -270,16 +270,16 @@ GUIText:
   m_Text: GAME OVER
   m_Anchor: 4
   m_Alignment: 1
-  m_PixelOffset: {x: 0, y: 20}
+  m_PixelOffset: {x: 0, y: 25}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: f85c0f062f8fb6a409a686fecf6316e8, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 0
-  m_FontStyle: 0
+  m_FontSize: 20
+  m_FontStyle: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4283848447
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!4 &1623206015

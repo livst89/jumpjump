@@ -7,14 +7,14 @@ public class PlayerControl : MonoBehaviour
 	private ScoreKeeper scoreKeeper; // Object for referring to the GameController script
 
 	public float maxSpeed = 10.0f;
-	public float jumpForce;				// Set to 700.0f in the Player inspector
-	private bool grounded = false;			// Whether or not the player is grounded.
-	public Transform groundCheck;			// A position marking where to check if the player is grounded.
+	public float jumpForce;	// Set to 700.0f in the Player inspector
+	private bool grounded = false;	// Whether or not the player is grounded.
+	public Transform groundCheck;	// A position marking where to check if the player is grounded.
 	float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
 
-	float minValX = -6.5f;				// Sets the boundaries 
-	float maxValX = 6.5f;				// Sets the boundaries SO THE LAYER CAN'T FALL OFF THE SCREEN. 
+	float minValX = -5.5f;	// Sets the boundaries 
+	float maxValX = 5.5f;	// Sets the boundaries SO THE LAYER CAN'T FALL OFF THE SCREEN. 
 
 	public AudioClip Jump1;
 
