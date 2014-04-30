@@ -1,50 +1,59 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/* Script controlling the behaviour of each platform prefab
+ * void Start() - Check for GameController and ScoreKeeper tagged objects in scene
+ * void Update() - Calls DespawnPlat()
+ * void FixedUpdate() - Moves platforms down
+ * GameObject OnCollisionEnter2D(Collision2D other) - Collision detection with object tagged "Player" (Play sound, add points to score, push player up, set game object to inactive)
+ * void DespawnPlat() - Check platform y-axis position, set to inactive if too low
+ */
+
 public class Platforms : MonoBehaviour {
 
 	private GameController gameController; // Object for referring to the GameController script
 	private ScoreKeeper scoreKeeper; // Object for referring to the GameController script
 
-	public float speed;	// Make the speed as a float
-	public float jumpForce;	// Value must be set in the Platform prefab Inspector
+	public float speed;	// Variable for storing platform downward movement speed value, set in Inspector
+	public float jumpForce;	// Variable for storing Player jump boost speed value, set in Inspector
 
-	public float checkYPos;
-	public float despawnHeight;
+	public float checkYPos;	// Variable for storing a platforms current y-axis position
+	public float despawnHeight; // Variable for storing value of what height platforms should despawn at, set in Inspector
 
 	public AudioClip Jump1;	// Jump sound clip
 
+	// Use this for initialization
 	void Start () {
 		// Check to ensure that a GameController object is in the scene
-		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
-		if (gameControllerObject != null)
+		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");	// Search scene for game objects with the tag "GameController"
+		if (gameControllerObject != null)	// If one is found...
 		{
-			gameController = gameControllerObject.GetComponent <GameController>();
+			gameController = gameControllerObject.GetComponent <GameController>();	// ... get the GameController script component
 		}
-		if (gameController == null)
+		if (gameController == null)	// If one is not found...
 		{
-			Debug.Log ("Cannot find 'GameController' script");
+			Debug.Log ("Cannot find 'GameController' script");	// Debugging to show if there is a mistake
 		}
 
-		GameObject scoreKeeperObject = GameObject.FindWithTag ("ScoreKeeper");
-		if (scoreKeeperObject != null)
+		// Check to ensure that a ScoreKeeper object is in the scene
+		GameObject scoreKeeperObject = GameObject.FindWithTag ("ScoreKeeper"); // Search scene for game objects with the tag "ScoreKeeper"
+		if (scoreKeeperObject != null) // If one is found...
 		{
-			scoreKeeper = scoreKeeperObject.GetComponent <ScoreKeeper>();
+			scoreKeeper = scoreKeeperObject.GetComponent <ScoreKeeper>();	// ... get the ScoreKeeper script component
 		}
-		if (scoreKeeper == null)
+		if (scoreKeeper == null) // If one is not found...
 		{
-			Debug.Log ("Cannot find 'Score' script");
+			Debug.Log ("Cannot find 'Score' script");	// Debugging to show if there is a mistake
 		}
 	}
 
+	// Update is called once per frame
 	void Update(){
-		despawnPlat();
+		DespawnPlat();
 	}
-
+	// This function is called every fixed framerate frame
 	void FixedUpdate () {
 		rigidbody2D.velocity = transform.up * speed;	// Moves platform down
-		//Debug.Log (rigidbody2D.velocity);
-		//transform.Translate (Vector2.up * speed, Space.World);
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
@@ -56,9 +65,9 @@ public class Platforms : MonoBehaviour {
 		}
 	}
 
-	void despawnPlat(){
-		checkYPos = transform.position.y;
-		if(checkYPos <= despawnHeight)
-			gameObject.SetActive(false); // Set the platform as inactive in the hierarchy
+	void DespawnPlat(){
+		checkYPos = transform.position.y; // Store the platforms current y-axis position
+		if(checkYPos <= despawnHeight) // If platform is lower on the y-axis than the despawn height...
+			gameObject.SetActive(false); // ... set the platform as inactive in the hierarchy
 	}
 }

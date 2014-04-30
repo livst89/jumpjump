@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/* Script for controlling the Main Camera in the Game scene
+ * void Start() - Assign value to offset variable
+ * void LateUpdate() - Change camera position along y-axis to follow Player object
+ */
+
 public class CameraControl : MonoBehaviour {
 	
 	public GameObject player; // Object for referencing the Player avatar
@@ -8,11 +13,12 @@ public class CameraControl : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		offset = transform.position; // Move camera to the off-set position
+		offset = transform.position; // Save the cameras positon in the offset Vector3
 	}
 	
-	// Update is called once per frame
+	// LateUpdate is called once per frame after all other Update functions
 	void LateUpdate () {
-		transform.position = new Vector3( 0,  player.transform.position.y + offset.y,  player.transform.position.z + offset.z); // Adjust the cameras positition to fit that of the Player avatar, and keep the offset from it
+		// Adjust the cameras positition to fit that of the Player avatar in the y-axis only, and keep the offset from it
+		transform.position = new Vector3( 0,  player.transform.position.y + offset.y,  player.transform.position.z + offset.z);
 	}
 }
