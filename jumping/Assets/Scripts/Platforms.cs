@@ -11,16 +11,16 @@ using System.Collections;
 
 public class Platforms : MonoBehaviour {
 
-	private GameController gameController; // Object for referring to the GameController script
-	private ScoreKeeper scoreKeeper; // Object for referring to the GameController script
+	private GameController gameController; 	// Object for referring to the GameController script
+	private ScoreKeeper scoreKeeper; 				// Object for referring to the GameController script
 
-	public float speed;	// Variable for storing platform downward movement speed value, set in Inspector
-	public float jumpForce;	// Variable for storing Player jump boost speed value, set in Inspector
+	public float speed;											// Variable for storing platform downward movement speed value, set in Inspector
+	public float jumpForce;									// Variable for storing Player jump boost speed value, set in Inspector
 
-	public float checkYPos;	// Variable for storing a platforms current y-axis position
-	public float despawnHeight; // Variable for storing value of what height platforms should despawn at, set in Inspector
+	public float checkYPos;									// Variable for storing a platforms current y-axis position
+	public float despawnHeight; 						// Variable for storing value of what height platforms should despawn at, set in Inspector
 
-	public AudioClip Jump1;	// Jump sound clip
+	public AudioClip Jump1;									// Jump Audiosound
 
 	// Use this for initialization
 	void Start () {

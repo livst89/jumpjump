@@ -1,8 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerControl.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameController.cs" Line="100" Column="25" />
+      <File FileName="Assets\Scripts\GameController.cs" Line="73" Column="32" />
+      <File FileName="Assets\Scripts\Platforms.cs" Line="23" Column="33" />
+      <File FileName="Assets\Scripts\PlayerControl.cs" Line="56" Column="3" />
+      <File FileName="Assets\Scripts\ScoreKeeper.cs" Line="16" Column="30" />
+      <File FileName="Assets\Scripts\CameraControl.cs" Line="22" Column="3" />
+      <File FileName="Assets\Scripts\GameOverControl.cs" Line="8" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

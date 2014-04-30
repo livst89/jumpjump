@@ -10,9 +10,8 @@ using System.Collections;
  */
 
 public class ScoreKeeper : MonoBehaviour {
-
-	private int score; // Variable for holding score value
-	public GUIText scoreText; // GUI text element for displaying the score
+	private int score;				 	// Variable for holding score value
+	public GUIText scoreText; 	// GUI text element for displaying the score
 
 	// This function is called when the script instance is being loaded
 	void Awake() {
