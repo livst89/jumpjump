@@ -5,11 +5,13 @@ MED4 OOP mini project game! Small 2D game made in Unity for a Medialogy 4th seme
 Hand-in deadline: August 30th 2014, 03:00 PM.
 
 
--- Opening the game --
+-- OPENING THE GAME --
+
 The game can be opened either by opening the "web build.html" file in the web build folder (correct aspect ratio, refresh page to try game again), or by using the "JumpJumpThaGame.exe" file in the main folder (wrong aspect ratio, press Alt + F4 to exit game).
 
 
--- Main Folder content --
+-- MAIN FOLDER CONTENT --
+
 JumpJumpThaGame_Data: Files for running the .exe file in the main folder.
 jumping: Unity project folder, contains game assets, library files and project settings folders.
 web build: Contains files for opening the game as a .html file
@@ -20,7 +22,8 @@ JumpJumpThaGame.exe: .exe file for running the game in it's own window. Press Al
 README.md: This file. :)
 
 
--- Made by --
+-- MADE BY --
+
 Ewelina Halime
 Liv Stubbe Teglbjærg
 Sandra Fagerli
